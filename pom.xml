@@ -40,5 +40,15 @@
             </plugin>
         </plugins>
     </build>
+  <repository>
+  <id>CFontenotFeed</id>
+  <url>https://pkgs.dev.azure.com/dosoba0796/83e283b4-9cce-4666-b124-e9321357e010/_packaging/CFontenotFeed/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
 
 </project>
