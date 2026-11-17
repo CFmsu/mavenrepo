@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maventest
+  namespace: maventest
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: maventest
+  template:
+    metadata:
+      labels:
+        app: maventest
+    spec:
+      containers:
+        - name: maventest
+          image: cfmsu/maventest:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 18080
+              name: http
