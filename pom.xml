@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,24 +28,42 @@
 
     <build>
         <plugins>
+            <!-- Java compiler configuration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
             </plugin>
 
+            <!-- Unit testing configuration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.4</version>
             </plugin>
+
+            <!-- Executable JAR configuration -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.gfg.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
- <distributionManagement>
-    <repository>
-        <id>CFontenotFeed</id>
-        <url>https://pkgs.dev.azure.com/dosoba0796/83e283b4-9cce-4666-b124-e9321357e010/_packaging/CFontenotFeed/maven/v1</url>
-    </repository>
-</distributionManagement>
+
+    <!-- Azure DevOps Maven repository configuration -->
+    <distributionManagement>
+        <repository>
+            <id>CFontenotFeed</id>
+            <url>https://pkgs.dev.azure.com/dosoba0796/83e283b4-9cce-4666-b124-e9321357e010/_packaging/CFontenotFeed/maven/v1</url>
+        </repository>
+    </distributionManagement>
 
 </project>
